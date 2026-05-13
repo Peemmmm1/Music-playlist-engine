@@ -41,8 +41,8 @@ void freeStack(Stack* stack) {
     }
     free(stack);
 }
-Peem — 3/5/69 22:56
-stack.c
+
+
 #ifndef SHUFFLE_H
 #define SHUFFLE_H
 
