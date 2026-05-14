@@ -52,7 +52,7 @@ Graph + BFS
 - **Hash Table** — O(1) average search vs O(n) linear scan through the list.
 - **Graph + BFS** — Songs form a similarity network. BFS gives nearest matches first, better UX than DFS.
 
----
+----
 
 ## Algorithms
 
