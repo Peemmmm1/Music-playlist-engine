@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"
-
+ 
 Stack* createStack() {
-    Stack* stack = (Stack)malloc(sizeof(Stack));
+    Stack* stack = (Stack*)malloc(sizeof(Stack));  
     stack->top = NULL;
     stack->size = 0;
     return stack;
 }
-
-void push(Stack stack, Song song) {
-    StackNode* newNode = (StackNode)malloc(sizeof(StackNode));
+ 
+void push(Stack* stack, Song song) {              
+    StackNode* newNode = (StackNode*)malloc(sizeof(StackNode));  
     newNode->song = song;
     newNode->next = stack->top;
     stack->top = newNode;
     stack->size++;
 }
-
-Song pop(Stack stack) {
+ 
+Song pop(Stack* stack) {                           
     if (isStackEmpty(stack)) {
         printf("History is empty\n");
         Song empty = {0};
@@ -30,11 +30,11 @@ Song pop(Stack stack) {
     stack->size--;
     return song;
 }
-
+ 
 int isStackEmpty(Stack* stack) {
     return stack->top == NULL;
 }
-
+ 
 void freeStack(Stack* stack) {
     while (!isStackEmpty(stack)) {
         pop(stack);
