@@ -36,6 +36,11 @@ void playSong(Node** current, Stack* history) {
     printf("Now playing: %s - %s\n",
         (*current)->song.title,
         (*current)->song.artist);
+
+    char command[220];
+    sprintf(command, "start %s", (*current)->song.url);
+    system(command);
+        
 }
 
 int main() {
