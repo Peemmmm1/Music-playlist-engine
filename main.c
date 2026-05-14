@@ -19,6 +19,7 @@ void addNewSong(Node** head, HashTable* ht, Graph* graph) {
     printf("Artist: "); scanf(" %[^\n]", song.artist);
     printf("Genre: "); scanf(" %[^\n]", song.genre);
     printf("Duration (sec): "); scanf("%d", &song.duration);
+    printf("YouTube URL: "); scanf(" %[^\n]", song.url); // เพิ่มตรงนี้
     addSong(head, song);
     insertHash(ht, song);
     connectSimilarSongs(graph, *head);
