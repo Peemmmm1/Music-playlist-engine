@@ -17,7 +17,7 @@ A CLI-based music playlist management system that simulates how real streaming p
 3.Sutharos Siriton ID:68070503492 (GitHub: sutharos31-ops)
 - Stack + Weighted Shuffle
 
-**Commit Hash:** `5e914ce`
+**Commit Hash:** `eac56fa`
 
 ---
 
