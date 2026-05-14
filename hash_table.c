@@ -12,23 +12,23 @@ int hashFunction(char* key) {
 }
 
 HashTable* createHashTable() {
-    HashTable* ht = (HashTable)malloc(sizeof(HashTable));
+    HashTable* ht = (HashTable*)malloc(sizeof(HashTable));
     for (int i = 0; i < TABLE_SIZE; i++) {
         ht->buckets[i] = NULL;
     }
     return ht;
 }
 
-void insertHash(HashTable ht, Song song) {
+void insertHash(HashTable* ht, Song song) {
     int index = hashFunction(song.title);
-    HashEntry* newEntry = (HashEntry)malloc(sizeof(HashEntry));
+    HashEntry* newEntry = (HashEntry*)malloc(sizeof(HashEntry));
     strcpy(newEntry->key, song.title);
     newEntry->song = song;
     newEntry->next = ht->buckets[index];
     ht->buckets[index] = newEntry;
 }
 
-Song searchHash(HashTable* ht, char* title) {
+Song* searchHash(HashTable* ht, char* title) {
     int index = hashFunction(title);
     HashEntry* temp = ht->buckets[index];
     while (temp != NULL) {

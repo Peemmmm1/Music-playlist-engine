@@ -22,4 +22,3 @@ void deleteHash(HashTable* ht, char* title);
 void freeHashTable(HashTable* ht);
 
 #endif
-

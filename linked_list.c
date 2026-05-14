@@ -3,7 +3,7 @@
 #include "linked_list.h"
 
 Node* createNode(Song song) {
-    Node* newNode = (Node)malloc(sizeof(Node));
+    Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->song = song;
     newNode->prev = NULL;
     newNode->next = NULL;
@@ -11,12 +11,12 @@ Node* createNode(Song song) {
 }
 
 void addSong(Node** head, Song song) {
-    Node newNode = createNode(song);
+    Node* newNode = createNode(song);
     if (*head == NULL) {
-        head = newNode;
+        *head = newNode;
         return;
     }
-    Node temp = head;
+    Node* temp = *head;
     while (temp->next != NULL) {
         temp = temp->next;
     }
@@ -25,7 +25,7 @@ void addSong(Node** head, Song song) {
 }
 
 void deleteSong(Node** head, int id) {
-    Node temp = head;
+    Node* temp = *head;
     while (temp != NULL && temp->song.id != id) {
         temp = temp->next;
     }
@@ -34,7 +34,7 @@ void deleteSong(Node** head, int id) {
         return;
     }
     if (temp->prev != NULL) temp->prev->next = temp->next;
-    elsehead = temp->next;
+    else *head = temp->next;
     if (temp->next != NULL) temp->next->prev = temp->prev;
     free(temp);
 }

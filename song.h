@@ -10,6 +10,7 @@ typedef struct Song {
     char title[MAX_TITLE];
     char artist[MAX_ARTIST];
     char genre[MAX_GENRE];
+    char url[200];        
     int play_count;
     int duration;
 } Song;
